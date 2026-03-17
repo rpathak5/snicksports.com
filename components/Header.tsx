@@ -23,7 +23,10 @@ const SnickLogo = () => (
   </svg>
 )
 
-const navLinks = [{ label: 'Features', href: '#features' }]
+const navLinks = [
+  { label: 'Features', href: '#features' },
+  { label: 'About', href: '#about' },
+]
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -90,6 +93,26 @@ export default function Header() {
             ))}
           </nav>
 
+          {/* Coming soon pill */}
+          <div className="hidden md:flex items-center">
+            <span
+              style={{
+                fontFamily: INT,
+                fontWeight: 500,
+                fontSize: '11px',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: '#c084fc',
+                background: 'rgba(123,79,212,0.15)',
+                border: '0.5px solid rgba(123,79,212,0.35)',
+                borderRadius: '20px',
+                padding: '5px 14px',
+              }}
+            >
+              Coming soon
+            </span>
+          </div>
+
           {/* Hamburger */}
           <button
             className="md:hidden flex flex-col justify-center gap-1.5 p-2 -mr-2"
@@ -131,7 +154,7 @@ export default function Header() {
           </span>
         </div>
 
-        <nav className="flex flex-col items-center gap-8">
+        <nav className="flex flex-col items-center gap-8 mb-10">
           {navLinks.map(({ label, href }) => (
             <a
               key={label}
@@ -150,6 +173,24 @@ export default function Header() {
             </a>
           ))}
         </nav>
+
+        {/* Coming soon pill in mobile overlay */}
+        <span
+          style={{
+            fontFamily: INT,
+            fontWeight: 500,
+            fontSize: '11px',
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: '#c084fc',
+            background: 'rgba(123,79,212,0.15)',
+            border: '0.5px solid rgba(123,79,212,0.35)',
+            borderRadius: '20px',
+            padding: '6px 18px',
+          }}
+        >
+          Coming soon
+        </span>
       </div>
     </>
   )

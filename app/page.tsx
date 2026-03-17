@@ -1,6 +1,8 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Features from '@/components/Features'
+import VisionQuote from '@/components/VisionQuote'
+import WhyNow from '@/components/WhyNow'
 import CtaSection from '@/components/CtaSection'
 import Footer from '@/components/Footer'
 
@@ -11,6 +13,8 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
+        <VisionQuote />
+        <WhyNow />
         <CtaSection />
       </main>
       <Footer />

@@ -1,5 +1,7 @@
 'use client'
 
+import WaitlistForm from './WaitlistForm'
+
 const CD = "'Clash Display', sans-serif"
 const INT = "var(--font-inter), 'Inter', sans-serif"
 
@@ -53,7 +55,7 @@ export default function Hero() {
 
       {/* ── Content ── */}
       <div className="relative z-10 w-full mx-auto" style={{ maxWidth: '1100px' }}>
-        <div style={{ maxWidth: '560px' }}>
+        <div style={{ maxWidth: '580px' }}>
 
           {/* Eyebrow */}
           <p
@@ -76,11 +78,19 @@ export default function Hero() {
           {/* Subtext */}
           <p
             className="animate-fade-in-up delay-200"
-            style={{ fontFamily: INT, fontWeight: 400, fontSize: '15px', lineHeight: 1.7, color: '#b0a8c8', maxWidth: '420px', opacity: 0 }}
+            style={{ fontFamily: INT, fontWeight: 400, fontSize: '15px', lineHeight: 1.7, color: '#b0a8c8', maxWidth: '420px', marginBottom: '32px', opacity: 0 }}
           >
             AI-powered breakdown of your technique and movement — plus ready-to-share
             content that puts your best moments in front of the right audience.
           </p>
+
+          {/* Waitlist form */}
+          <div className="animate-fade-in-up delay-200" style={{ opacity: 0 }}>
+            <WaitlistForm />
+            <p style={{ fontFamily: INT, fontWeight: 400, fontSize: '12px', color: '#7a6fa0', marginTop: '10px' }}>
+              Be the first to know when we launch. No spam, ever.
+            </p>
+          </div>
 
         </div>
       </div>

@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 const CD = "'Clash Display', sans-serif"
 const INT = "var(--font-inter), 'Inter', sans-serif"
 
@@ -21,80 +19,116 @@ const SnickLogo = () => (
   </svg>
 )
 
+const navLinks = [
+  { label: 'Features', href: '#features' },
+  { label: 'How it works', href: '#features' },
+  { label: 'About', href: '#about' },
+]
+
 export default function Footer() {
   return (
     <footer id="contact" style={{ background: '#0d0818', borderTop: '0.5px solid #1e1030' }}>
 
-      {/* QR + Domain row */}
+      {/* Main footer content */}
       <div
-        className="flex items-center justify-between flex-wrap gap-6 mx-auto"
-        style={{ maxWidth: '1100px', padding: '24px 28px' }}
+        className="flex flex-wrap justify-between gap-8 mx-auto"
+        style={{ maxWidth: '1100px', padding: 'clamp(32px,5vh,48px) 28px' }}
       >
-        {/* Left: QR */}
-        <div className="flex flex-col items-center gap-1.5">
-          <div
-            style={{
-              width: '72px', height: '72px',
-              borderRadius: '8px',
-              overflow: 'hidden',
-              background: '#fff',
-              flexShrink: 0,
-            }}
-          >
-            <Image
-              src="/snick-qr.png"
-              alt="Snick Instagram QR code"
-              width={72}
-              height={72}
-              style={{ objectFit: 'cover' }}
-            />
+
+        {/* Left: Logo + tagline */}
+        <div style={{ maxWidth: '260px' }}>
+          <div className="flex items-center gap-2 mb-3">
+            <SnickLogo />
+            <span style={{ fontFamily: CD, fontWeight: 800, fontSize: '18px', letterSpacing: '0.08em', color: '#fff' }}>
+              SNICK
+            </span>
           </div>
-          {/* Footer caption: Inter 400, #7a6fa0 */}
-          <p style={{ fontFamily: INT, fontWeight: 400, fontSize: '10px', color: '#7a6fa0', letterSpacing: '0.05em', textAlign: 'center' }}>
-            Scan to follow on Instagram
+          <p style={{ fontFamily: INT, fontWeight: 400, fontSize: '13px', color: '#7a6fa0', lineHeight: 1.6 }}>
+            AI-powered sports performance and showcase platform. Launching soon.
           </p>
         </div>
 
-        {/* Right: domain — Clash Display 800, gradient */}
-        <a
-          href="https://snicksports.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            fontFamily: CD,
-            fontWeight: 800,
-            fontSize: '15px',
-            letterSpacing: '0.1em',
-            background: 'linear-gradient(90deg, #C1008B, #7B4FD4)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            textDecoration: 'none',
-          }}
-        >
-          SNICKSPORTS.COM
-        </a>
+        {/* Centre: Nav links */}
+        <nav style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <p style={{ fontFamily: INT, fontWeight: 600, fontSize: '11px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#c4bedd', marginBottom: '4px' }}>
+            Product
+          </p>
+          {navLinks.map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              style={{
+                fontFamily: INT,
+                fontWeight: 400,
+                fontSize: '13px',
+                color: '#7a6fa0',
+                textDecoration: 'none',
+              }}
+              className="hover:text-white transition-colors duration-150"
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+
+        {/* Right: Contact + social */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <p style={{ fontFamily: INT, fontWeight: 600, fontSize: '11px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#c4bedd', marginBottom: '4px' }}>
+            Connect
+          </p>
+          <a
+            href="mailto:contact@snicksports.com"
+            style={{ fontFamily: INT, fontWeight: 400, fontSize: '13px', color: '#7a6fa0', textDecoration: 'none' }}
+            className="hover:text-white transition-colors duration-150"
+          >
+            contact@snicksports.com
+          </a>
+          <a
+            href="https://instagram.com/snick.sports"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontFamily: INT, fontWeight: 400, fontSize: '13px', color: '#7a6fa0', textDecoration: 'none' }}
+            className="hover:text-white transition-colors duration-150"
+          >
+            Instagram
+          </a>
+          <a
+            href="/privacy"
+            style={{ fontFamily: INT, fontWeight: 400, fontSize: '13px', color: '#7a6fa0', textDecoration: 'none' }}
+            className="hover:text-white transition-colors duration-150"
+          >
+            Privacy Policy
+          </a>
+        </div>
       </div>
 
       {/* Divider */}
       <div style={{ height: '0.5px', background: '#1e1030', margin: '0 28px' }} />
 
-      {/* Branding + copyright */}
+      {/* Bottom bar */}
       <div
-        className="flex flex-col items-center gap-3 mx-auto"
-        style={{ maxWidth: '1100px', padding: '20px 28px 28px' }}
+        className="flex items-center justify-between flex-wrap gap-3 mx-auto"
+        style={{ maxWidth: '1100px', padding: '16px 28px' }}
       >
-        <div className="flex items-center gap-2">
-          <SnickLogo />
-          {/* Logo wordmark: Clash Display 800 */}
-          <span style={{ fontFamily: CD, fontWeight: 800, fontSize: '16px', letterSpacing: '0.08em', color: '#fff' }}>
-            SNICK
-          </span>
-        </div>
-        {/* Copyright: Inter 400, #7a6fa0 */}
-        <p style={{ fontFamily: INT, fontWeight: 400, fontSize: '10px', color: '#7a6fa0', textAlign: 'center' }}>
+        <p style={{ fontFamily: INT, fontWeight: 400, fontSize: '11px', color: '#7a6fa0' }}>
           © {new Date().getFullYear()} Snick Sports. All rights reserved.
         </p>
+        <span
+          style={{
+            fontFamily: INT,
+            fontWeight: 500,
+            fontSize: '10px',
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: '#c084fc',
+            background: 'rgba(123,79,212,0.12)',
+            border: '0.5px solid rgba(123,79,212,0.3)',
+            borderRadius: '20px',
+            padding: '3px 10px',
+          }}
+        >
+          Coming soon
+        </span>
       </div>
     </footer>
   )

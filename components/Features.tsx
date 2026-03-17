@@ -150,7 +150,7 @@ export default function Features() {
 
         {/* Section header */}
         <p style={{ fontFamily: INT, fontWeight: 500, fontSize: '11px', letterSpacing: '0.18em', color: '#C1008B', textTransform: 'uppercase', marginBottom: '12px' }}>
-          What we offer
+          What we&apos;re building
         </p>
         <h2 style={{ fontFamily: CD, fontWeight: 800, fontSize: 'clamp(28px,4vw,40px)', color: '#fff', marginBottom: '36px', lineHeight: 1.1 }}>
           Everything you need to{' '}
