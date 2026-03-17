@@ -1,23 +1,7 @@
+'use client'
+
 const CD = "'Clash Display', sans-serif"
 const INT = "var(--font-inter), 'Inter', sans-serif"
-
-const SnickLogo = () => (
-  <svg width="28" height="28" viewBox="0 0 140 140" fill="none" aria-hidden="true">
-    <path
-      d="M129.846 26.7078C104.836 30.1791 78.1413 54.4285 65.4961 66.4565H126.474C112.091 84.797 103.066 94.6147 87.0691 104.729C76.5262 111.394 64.0411 114.099 51.5678 114.099H10.1387C33.7337 106.674 47.1201 101.582 74.2072 73.5042H13.5107C30.4914 55.0506 41.7861 43.4211 57.3901 34.2027C66.8632 28.6063 77.8776 26.402 88.879 26.2304C111.063 25.8844 130.522 26.6139 129.846 26.7078Z"
-      fill="url(#ftLogoGrad)"
-      stroke="white"
-      strokeOpacity="0.16"
-      strokeWidth="0.469843"
-    />
-    <defs>
-      <linearGradient id="ftLogoGrad" x1="50.3248" y1="26.1379" x2="89.9913" y2="114.003" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#C1008B" />
-        <stop offset="1" stopColor="#2A00A2" />
-      </linearGradient>
-    </defs>
-  </svg>
-)
 
 const navLinks = [
   { label: 'Features', href: '#features' },
@@ -37,11 +21,12 @@ export default function Footer() {
 
         {/* Left: Logo + tagline */}
         <div style={{ maxWidth: '260px' }}>
-          <div className="flex items-center gap-2 mb-3">
-            <SnickLogo />
-            <span style={{ fontFamily: CD, fontWeight: 800, fontSize: '18px', letterSpacing: '0.08em', color: '#fff' }}>
-              SNICK
-            </span>
+          <div className="mb-3">
+            <img
+              src="/images/snick-logo.svg"
+              alt="Snick Sports"
+              style={{ height: 32, width: 'auto' }}
+            />
           </div>
           <p style={{ fontFamily: INT, fontWeight: 400, fontSize: '13px', color: '#7a6fa0', lineHeight: 1.6 }}>
             AI-powered sports performance and showcase platform. Launching soon.
@@ -71,7 +56,7 @@ export default function Footer() {
           ))}
         </nav>
 
-        {/* Right: Contact + social */}
+        {/* Right: Contact + QR */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <p style={{ fontFamily: INT, fontWeight: 600, fontSize: '11px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#c4bedd', marginBottom: '4px' }}>
             Connect
@@ -84,20 +69,39 @@ export default function Footer() {
             contact@snicksports.com
           </a>
           <a
-            href="https://instagram.com/snick.sports"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ fontFamily: INT, fontWeight: 400, fontSize: '13px', color: '#7a6fa0', textDecoration: 'none' }}
-            className="hover:text-white transition-colors duration-150"
-          >
-            Instagram
-          </a>
-          <a
             href="/privacy"
             style={{ fontFamily: INT, fontWeight: 400, fontSize: '13px', color: '#7a6fa0', textDecoration: 'none' }}
             className="hover:text-white transition-colors duration-150"
           >
             Privacy Policy
+          </a>
+
+          {/* Instagram QR */}
+          <a
+            href="https://www.instagram.com/snicksports"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 6,
+              opacity: 0.7,
+              textDecoration: 'none',
+              transition: 'opacity 0.2s',
+              marginTop: '6px',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
+            onMouseLeave={e => (e.currentTarget.style.opacity = '0.7')}
+          >
+            <img
+              src="/images/snick-qr.png"
+              alt="Scan to follow Snick Sports on Instagram"
+              style={{ width: 80, height: 80, borderRadius: 8 }}
+            />
+            <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontFamily: INT }}>
+              Follow on Instagram
+            </span>
           </a>
         </div>
       </div>

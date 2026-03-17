@@ -55,16 +55,14 @@ export default function VisionQuote() {
             style={{
               fontFamily: CD,
               fontWeight: 700,
-              fontSize: 'clamp(22px, 3.5vw, 32px)',
-              lineHeight: 1.3,
+              fontSize: 'clamp(20px, 3vw, 28px)',
+              lineHeight: 1.4,
               color: '#fff',
               marginBottom: '24px',
             }}
           >
-            Every elite player had a moment where they finally{' '}
-            <span style={{ color: '#C1008B' }}>saw themselves clearly</span>.
-            Snick makes that moment available to{' '}
-            <span style={{ color: '#7B4FD4' }}>every player</span>, at every level.
+            Every serious player deserves the same analytical tools that professional clubs
+            use — not just the ones who can afford a coach with a tablet.
           </p>
           <footer>
             <p
@@ -77,7 +75,7 @@ export default function VisionQuote() {
                 color: '#7a6fa0',
               }}
             >
-              — The Snick Team
+              — The Snick team
             </p>
           </footer>
         </blockquote>

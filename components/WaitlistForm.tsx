@@ -11,7 +11,8 @@ export default function WaitlistForm({ buttonLabel = 'Join waitlist' }: { button
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setStatus('loading')
-    let city = 'Unknown', country = 'Unknown'
+    let city = 'Unknown'
+    let country = 'Unknown'
     try {
       const geo = await fetch('https://ipapi.co/json/')
       const data = await geo.json()
@@ -22,24 +23,29 @@ export default function WaitlistForm({ buttonLabel = 'Join waitlist' }: { button
       const res = await fetch('https://formspree.io/f/maqplebl', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ email, location: `${city}, ${country}`, submitted_at: new Date().toISOString() }),
+        body: JSON.stringify({
+          email,
+          location: `${city}, ${country}`,
+          submitted_at: new Date().toISOString(),
+        }),
       })
       setStatus(res.ok ? 'success' : 'error')
-    } catch (_) { setStatus('error') }
+    } catch (_) {
+      setStatus('error')
+    }
   }
 
-  if (status === 'success') return (
-    <p style={{ fontFamily: INT, color: '#c54fff', fontSize: '13px' }}>
-      You&apos;re on the list! We&apos;ll be in touch.
-    </p>
-  )
+  if (status === 'success') {
+    return (
+      <p style={{ fontFamily: INT, color: '#c54fff', fontSize: 13 }}>
+        You&apos;re on the list! We&apos;ll be in touch.
+      </p>
+    )
+  }
 
   return (
     <div>
-      <form
-        onSubmit={handleSubmit}
-        style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}
-      >
+      <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
         <input
           type="email"
           name="email"
@@ -83,7 +89,7 @@ export default function WaitlistForm({ buttonLabel = 'Join waitlist' }: { button
         </button>
       </form>
       {status === 'error' && (
-        <p style={{ fontFamily: INT, color: '#ff4d6d', fontSize: '12px', marginTop: '6px' }}>
+        <p style={{ fontFamily: INT, color: 'red', fontSize: 12, marginTop: 6 }}>
           Something went wrong. Please try again.
         </p>
       )}

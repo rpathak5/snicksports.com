@@ -7,18 +7,21 @@ const INT = "var(--font-inter), 'Inter', sans-serif"
 
 const stats = [
   {
-    value: '85%',
-    label: 'of youth players never get structured feedback on their technique',
+    value: '300M+',
+    label: 'Amateur players worldwide',
+    desc: 'Most never get structured feedback on their technique or game.',
     color: '#C1008B',
   },
   {
-    value: '3×',
-    label: 'faster improvement when athletes can visually review their own performance',
+    value: 'AI-ready',
+    label: 'Video analysis is now possible at scale',
+    desc: 'What used to cost thousands in coaching hours can now happen automatically.',
     color: '#7B4FD4',
   },
   {
-    value: '1 link',
-    label: 'is all scouts need — yet most players have no shareable profile at all',
+    value: 'Zero',
+    label: 'Tools built for the player, not the club',
+    desc: 'Existing software is designed for coaches and analysts. We\'re building for you.',
     color: '#C1008B',
   },
 ]
@@ -44,7 +47,6 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
         background: '#0d0818',
         border: '0.5px solid #231540',
         borderRadius: '14px',
-        textAlign: 'center',
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(20px)',
         transition: `opacity 0.6s ease ${index * 120}ms, transform 0.6s ease ${index * 120}ms`,
@@ -54,10 +56,10 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
         style={{
           fontFamily: CD,
           fontWeight: 800,
-          fontSize: 'clamp(36px, 5vw, 52px)',
+          fontSize: 'clamp(28px, 4vw, 42px)',
           lineHeight: 1,
           color: stat.color,
-          marginBottom: '12px',
+          marginBottom: '10px',
         }}
       >
         {stat.value}
@@ -65,15 +67,26 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
       <p
         style={{
           fontFamily: INT,
-          fontWeight: 400,
+          fontWeight: 600,
           fontSize: '13px',
-          lineHeight: 1.6,
-          color: '#8a7fa8',
-          maxWidth: '220px',
-          margin: '0 auto',
+          color: '#fff',
+          marginBottom: '8px',
+          lineHeight: 1.4,
         }}
       >
         {stat.label}
+      </p>
+      <p
+        style={{
+          fontFamily: INT,
+          fontWeight: 400,
+          fontSize: '12px',
+          lineHeight: 1.6,
+          color: '#8a7fa8',
+          margin: 0,
+        }}
+      >
+        {stat.desc}
       </p>
     </div>
   )

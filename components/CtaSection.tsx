@@ -31,12 +31,12 @@ export default function CtaSection() {
 
           {/* Headline */}
           <h2 style={{ fontFamily: CD, fontWeight: 800, fontSize: 'clamp(26px,4vw,40px)', color: '#fff', lineHeight: 1.1, marginBottom: '14px' }}>
-            Be part of what&apos;s coming.
+            Your game, your data, your story.
           </h2>
 
           {/* Sub */}
-          <p style={{ fontFamily: INT, fontWeight: 400, fontSize: '15px', color: '#b0a8c8', maxWidth: '440px', lineHeight: 1.7, margin: '0 auto 36px' }}>
-            Snick is launching soon. Get early access and be among the first players to train smarter, build your profile, and get noticed.
+          <p style={{ fontFamily: INT, fontWeight: 400, fontSize: '15px', color: '#b0a8c8', maxWidth: '480px', lineHeight: 1.7, margin: '0 auto 36px' }}>
+            We&apos;re building Snick for players like you. Join the waitlist and help shape what we build.
           </p>
 
           {/* Waitlist form — centred */}
