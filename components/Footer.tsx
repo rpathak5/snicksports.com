@@ -22,11 +22,16 @@ export default function Footer() {
         {/* Left: Logo + tagline */}
         <div style={{ maxWidth: '260px' }}>
           <div className="mb-3">
-            <img
-              src="/images/snick-logo.svg"
-              alt="Snick Sports"
-              style={{ height: 32, width: 'auto' }}
-            />
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <img
+                src="/images/snick-logo.svg"
+                alt="Snick Sports"
+                style={{ height: 22, width: 'auto' }}
+              />
+              <span style={{ fontSize: 13, fontWeight: 500, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.6)' }}>
+                SNICK
+              </span>
+            </div>
           </div>
           <p style={{ fontFamily: INT, fontWeight: 400, fontSize: '13px', color: '#7a6fa0', lineHeight: 1.6 }}>
             AI-powered sports performance and showcase platform. Launching soon.

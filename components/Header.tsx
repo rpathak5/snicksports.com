@@ -41,11 +41,16 @@ export default function Header() {
         >
           {/* Logo */}
           <a href="#" className="flex items-center no-underline">
-            <img
-              src="/images/snick-logo.svg"
-              alt="Snick Sports"
-              style={{ height: 32, width: 'auto' }}
-            />
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <img
+                src="/images/snick-logo.svg"
+                alt="Snick Sports"
+                style={{ height: 28, width: 'auto' }}
+              />
+              <span style={{ fontSize: 15, fontWeight: 500, letterSpacing: '0.05em', color: '#ffffff' }}>
+                SNICK
+              </span>
+            </div>
           </a>
 
           {/* Desktop nav */}
@@ -123,11 +128,16 @@ export default function Header() {
 
         {/* Logo in overlay */}
         <div className="mb-12">
-          <img
-            src="/images/snick-logo.svg"
-            alt="Snick Sports"
-            style={{ height: 32, width: 'auto' }}
-          />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <img
+              src="/images/snick-logo.svg"
+              alt="Snick Sports"
+              style={{ height: 28, width: 'auto' }}
+            />
+            <span style={{ fontSize: 15, fontWeight: 500, letterSpacing: '0.05em', color: '#ffffff' }}>
+              SNICK
+            </span>
+          </div>
         </div>
 
         <nav className="flex flex-col items-center gap-8 mb-10">
