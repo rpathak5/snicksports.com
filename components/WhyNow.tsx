@@ -94,7 +94,7 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
 
 export default function WhyNow() {
   return (
-    <section id="about" style={{ padding: 'clamp(48px,7vh,80px) 28px' }}>
+    <section id="about" style={{ padding: '36px 32px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
 
         {/* Header */}

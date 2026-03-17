@@ -4,6 +4,7 @@ import Features from '@/components/Features'
 import VisionQuote from '@/components/VisionQuote'
 import WhyNow from '@/components/WhyNow'
 import CtaSection from '@/components/CtaSection'
+import InstagramStrip from '@/components/InstagramStrip'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <WhyNow />
         <CtaSection />
       </main>
+      <InstagramStrip />
       <Footer />
     </>
   )

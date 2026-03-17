@@ -141,7 +141,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
 /* ─── Section ───────────────────────────────────────────────────── */
 export default function Features() {
   return (
-    <section id="features" style={{ padding: 'clamp(60px,8vh,96px) 28px' }}>
+    <section id="features" style={{ padding: '40px 32px' }}>
 
       {/* Top divider */}
       <div style={{ height: '0.5px', background: '#1e1030', marginBottom: '52px' }} />

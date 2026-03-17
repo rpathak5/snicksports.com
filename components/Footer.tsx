@@ -1,5 +1,3 @@
-'use client'
-
 const CD = "'Clash Display', sans-serif"
 const INT = "var(--font-inter), 'Inter', sans-serif"
 
@@ -16,7 +14,7 @@ export default function Footer() {
       {/* Main footer content */}
       <div
         className="flex flex-wrap justify-between gap-8 mx-auto"
-        style={{ maxWidth: '1100px', padding: 'clamp(32px,5vh,48px) 28px' }}
+        style={{ maxWidth: '1100px', padding: '20px 32px' }}
       >
 
         {/* Left: Logo + tagline */}
@@ -61,7 +59,7 @@ export default function Footer() {
           ))}
         </nav>
 
-        {/* Right: Contact + QR */}
+        {/* Right: Contact */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <p style={{ fontFamily: INT, fontWeight: 600, fontSize: '11px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#c4bedd', marginBottom: '4px' }}>
             Connect
@@ -80,44 +78,16 @@ export default function Footer() {
           >
             Privacy Policy
           </a>
-
-          {/* Instagram QR */}
-          <a
-            href="https://www.instagram.com/snicksports"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: 6,
-              opacity: 0.7,
-              textDecoration: 'none',
-              transition: 'opacity 0.2s',
-              marginTop: '6px',
-            }}
-            onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
-            onMouseLeave={e => (e.currentTarget.style.opacity = '0.7')}
-          >
-            <img
-              src="/images/snick-qr.png"
-              alt="Scan to follow Snick Sports on Instagram"
-              style={{ width: 80, height: 80, borderRadius: 8 }}
-            />
-            <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontFamily: INT }}>
-              Follow on Instagram
-            </span>
-          </a>
         </div>
       </div>
 
       {/* Divider */}
-      <div style={{ height: '0.5px', background: '#1e1030', margin: '0 28px' }} />
+      <div style={{ height: '0.5px', background: '#1e1030', margin: '0 32px' }} />
 
       {/* Bottom bar */}
       <div
         className="flex items-center justify-between flex-wrap gap-3 mx-auto"
-        style={{ maxWidth: '1100px', padding: '16px 28px' }}
+        style={{ maxWidth: '1100px', padding: '12px 32px' }}
       >
         <p style={{ fontFamily: INT, fontWeight: 400, fontSize: '11px', color: '#7a6fa0' }}>
           © {new Date().getFullYear()} Snick Sports. All rights reserved.

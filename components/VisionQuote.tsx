@@ -19,7 +19,7 @@ export default function VisionQuote() {
   }, [])
 
   return (
-    <section style={{ padding: 'clamp(48px,7vh,80px) 28px' }}>
+    <section style={{ padding: '32px 32px' }}>
       <div style={{ height: '0.5px', background: '#1e1030', marginBottom: 'clamp(48px,7vh,80px)' }} />
 
       <div

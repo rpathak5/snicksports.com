@@ -7,7 +7,7 @@ const INT = "var(--font-inter), 'Inter', sans-serif"
 
 export default function CtaSection() {
   return (
-    <section style={{ padding: 'clamp(40px,6vh,72px) 28px' }}>
+    <section style={{ padding: '44px 32px' }}>
       <div className="mx-auto" style={{ maxWidth: '1100px' }}>
         <div
           style={{

@@ -10,7 +10,7 @@ export default function Hero() {
     <section
       id="hero"
       className="relative w-full flex items-center overflow-hidden"
-      style={{ minHeight: '92vh', padding: 'clamp(80px,10vh,120px) 28px' }}
+      style={{ minHeight: '92vh', padding: '56px 32px 48px' }}
     >
       {/* ── Background glows ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
