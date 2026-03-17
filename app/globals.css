@@ -81,6 +81,19 @@ body {
   width: 100%;
 }
 
+/* Hero two-column grid — stacks on mobile */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Waitlist button — shimmer sweep via ::before */
 .btn-shimmer {
   position: relative;

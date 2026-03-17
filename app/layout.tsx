@@ -23,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://api.fontshare.com/v2/css?f[]=clash-display@700,800&display=swap"
           rel="stylesheet"
         />
+        <link rel="preload" as="video" href="/videos/snick-hero.mp4" />
       </head>
       <body className="antialiased bg-[#08040F] text-white overflow-x-hidden">
         {children}

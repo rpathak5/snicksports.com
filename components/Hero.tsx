@@ -1,6 +1,7 @@
 'use client'
 
 import WaitlistForm from './WaitlistForm'
+import HeroVideo from './HeroVideo'
 
 const CD = "'Clash Display', sans-serif"
 const INT = "var(--font-inter), 'Inter', sans-serif"
@@ -9,8 +10,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full flex items-center overflow-hidden"
-      style={{ minHeight: '92vh', padding: '56px 32px 48px' }}
+      className="relative w-full overflow-hidden"
+      style={{ minHeight: '92vh', padding: '56px 32px 48px', display: 'flex', alignItems: 'center' }}
     >
       {/* ── Background glows ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -53,10 +54,11 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* ── Content ── */}
-      <div className="relative z-10 w-full mx-auto" style={{ maxWidth: '1100px' }}>
-        <div style={{ maxWidth: '580px' }}>
+      {/* ── Two-column grid ── */}
+      <div className="relative z-10 w-full mx-auto hero-grid" style={{ maxWidth: '1100px' }}>
 
+        {/* ── Left: text column ── */}
+        <div>
           {/* Eyebrow */}
           <p
             style={{ fontFamily: INT, fontWeight: 500, fontSize: '11px', letterSpacing: '0.18em', color: '#C1008B', textTransform: 'uppercase', marginBottom: '18px', animation: 'fadeIn 0.5s ease 0s both' }}
@@ -88,8 +90,13 @@ export default function Hero() {
               Be the first to know when we launch. No spam, ever.
             </p>
           </div>
-
         </div>
+
+        {/* ── Right: video column ── */}
+        <div style={{ animation: 'fadeIn 0.8s ease 0.4s both' }}>
+          <HeroVideo />
+        </div>
+
       </div>
     </section>
   )
