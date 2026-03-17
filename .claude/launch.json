@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "snick-web",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["-c", "cd /Users/rahulpathak/Downloads/snick-sports-nextjs && /opt/homebrew/bin/node node_modules/.bin/next dev --port 3001"]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  background: #08040F;
+}
+
+body {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background: #08040F;
+  color: #ffffff;
+}
+
+/* Stagger delays for hero animations */
+.delay-0   { animation-delay: 0ms; }
+.delay-100 { animation-delay: 120ms; }
+.delay-200 { animation-delay: 260ms; }
+.delay-300 { animation-delay: 420ms; }
+.delay-400 { animation-delay: 580ms; }
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(90deg, #C1008B, #7B4FD4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* CTA gradient domain text */
+.gradient-cta {
+  background: linear-gradient(90deg, #C1008B, #2A00A2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
