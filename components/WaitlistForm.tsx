@@ -65,11 +65,17 @@ export default function WaitlistForm({ buttonLabel = 'Join waitlist' }: { button
             outline: 'none',
             flex: '1 1 200px',
             minWidth: '200px',
+            transition: 'border-color 0.2s ease, background 0.2s ease',
           }}
         />
         <button
           type="submit"
           disabled={status === 'loading'}
+          className="btn-shimmer"
+          onMouseEnter={e => { if (status !== 'loading') e.currentTarget.style.transform = 'scale(1.04)' }}
+          onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
+          onMouseDown={e => { if (status !== 'loading') e.currentTarget.style.transform = 'scale(0.97)' }}
+          onMouseUp={e => { if (status !== 'loading') e.currentTarget.style.transform = 'scale(1.04)' }}
           style={{
             fontFamily: CD,
             fontWeight: 700,
@@ -83,6 +89,8 @@ export default function WaitlistForm({ buttonLabel = 'Join waitlist' }: { button
             cursor: status === 'loading' ? 'not-allowed' : 'pointer',
             opacity: status === 'loading' ? 0.7 : 1,
             whiteSpace: 'nowrap',
+            animation: 'pulseGlow 2.5s ease-in-out infinite',
+            transition: 'transform 0.15s ease',
           }}
         >
           {status === 'loading' ? 'Joining...' : buttonLabel}

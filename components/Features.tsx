@@ -64,6 +64,7 @@ const features = [
 function FeatureCard({ feature, index }: { feature: typeof features[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
+  const [hovered, setHovered] = useState(false)
   const isPink = feature.color === 'pink'
 
   useEffect(() => {
@@ -79,14 +80,18 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
     <div
       ref={ref}
       className="flex items-start gap-3.5"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       style={{
         padding: '18px',
         background: '#0d0818',
         border: '0.5px solid #231540',
         borderRadius: '12px',
         opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(18px)',
-        transition: `opacity 0.6s ease ${index * 90}ms, transform 0.6s ease ${index * 90}ms`,
+        transform: !visible ? 'translateY(18px)' : hovered ? 'translateY(-4px)' : 'translateY(0)',
+        transition: visible
+          ? 'opacity 0.6s ease, transform 0.25s ease'
+          : `opacity 0.6s ease ${index * 90}ms, transform 0.6s ease ${index * 90}ms`,
       }}
     >
       {/* Icon container */}
@@ -97,6 +102,8 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
           background: isPink ? '#2a0520' : '#120826',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           flexShrink: 0,
+          transition: 'transform 0.2s ease',
+          transform: hovered ? 'scale(1.1)' : 'scale(1)',
         }}
       >
         {feature.icon}

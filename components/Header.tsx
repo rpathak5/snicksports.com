@@ -59,7 +59,7 @@ export default function Header() {
               <a
                 key={label}
                 href={href}
-                className="transition-colors duration-200 hover:text-white no-underline"
+                className="nav-link-anim transition-colors duration-200 hover:text-white no-underline"
                 style={{
                   fontFamily: INT,
                   fontWeight: 400,
@@ -87,6 +87,7 @@ export default function Header() {
                 border: '0.5px solid rgba(123,79,212,0.35)',
                 borderRadius: '20px',
                 padding: '5px 14px',
+                animation: 'pulseGlow 3s ease-in-out infinite',
               }}
             >
               Coming soon
@@ -146,7 +147,7 @@ export default function Header() {
               key={label}
               href={href}
               onClick={() => setMenuOpen(false)}
-              className="transition-colors duration-200 hover:text-[#C1008B] no-underline"
+              className="nav-link-anim transition-colors duration-200 hover:text-[#C1008B] no-underline"
               style={{
                 fontFamily: CD,
                 fontWeight: 700,
@@ -173,6 +174,7 @@ export default function Header() {
             border: '0.5px solid rgba(123,79,212,0.35)',
             borderRadius: '20px',
             padding: '6px 18px',
+            animation: 'pulseGlow 3s ease-in-out infinite',
           }}
         >
           Coming soon

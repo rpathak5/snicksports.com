@@ -33,7 +33,7 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold: 0.15 }
+      { threshold: 0.2 }
     )
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
@@ -48,8 +48,8 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
         border: '0.5px solid #231540',
         borderRadius: '14px',
         opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(20px)',
-        transition: `opacity 0.6s ease ${index * 120}ms, transform 0.6s ease ${index * 120}ms`,
+        transform: visible ? 'translateY(0)' : 'translateY(16px)',
+        transition: `opacity 0.5s ease ${index * 150}ms, transform 0.5s ease ${index * 150}ms`,
       }}
     >
       <p

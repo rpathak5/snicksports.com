@@ -59,33 +59,30 @@ export default function Hero() {
 
           {/* Eyebrow */}
           <p
-            className="animate-fade-in-up delay-0"
-            style={{ fontFamily: INT, fontWeight: 500, fontSize: '11px', letterSpacing: '0.18em', color: '#C1008B', textTransform: 'uppercase', marginBottom: '18px', opacity: 0 }}
+            style={{ fontFamily: INT, fontWeight: 500, fontSize: '11px', letterSpacing: '0.18em', color: '#C1008B', textTransform: 'uppercase', marginBottom: '18px', animation: 'fadeIn 0.5s ease 0s both' }}
           >
             Built for players
           </p>
 
-          {/* Headline */}
+          {/* Headline — each line animates independently */}
           <h1
-            className="animate-fade-in-up delay-100"
-            style={{ fontFamily: CD, fontWeight: 800, fontSize: 'clamp(38px, 5.5vw, 52px)', lineHeight: 1.08, color: '#fff', marginBottom: '20px', opacity: 0 }}
+            style={{ fontFamily: CD, fontWeight: 800, fontSize: 'clamp(38px, 5.5vw, 52px)', lineHeight: 1.08, color: '#fff', marginBottom: '20px' }}
           >
-            Know your game.<br />
-            <span style={{ color: '#C1008B' }}>Grow</span> your game.<br />
-            <span style={{ color: '#7B4FD4' }}>Own</span> your story.
+            <span style={{ display: 'block', animation: 'fadeUp 0.55s ease 0.15s both' }}>Know your game.</span>
+            <span style={{ display: 'block', animation: 'fadeUp 0.55s ease 0.35s both' }}><span style={{ color: '#C1008B' }}>Grow</span> your game.</span>
+            <span style={{ display: 'block', animation: 'fadeUp 0.55s ease 0.55s both' }}><span style={{ color: '#7B4FD4' }}>Own</span> your story.</span>
           </h1>
 
           {/* Subtext */}
           <p
-            className="animate-fade-in-up delay-200"
-            style={{ fontFamily: INT, fontWeight: 400, fontSize: '15px', lineHeight: 1.7, color: '#b0a8c8', maxWidth: '420px', marginBottom: '32px', opacity: 0 }}
+            style={{ fontFamily: INT, fontWeight: 400, fontSize: '15px', lineHeight: 1.7, color: '#b0a8c8', maxWidth: '420px', marginBottom: '32px', animation: 'fadeIn 0.6s ease 0.75s both' }}
           >
             AI-powered breakdown of your technique and movement — plus ready-to-share
             content that puts your best moments in front of the right audience.
           </p>
 
           {/* Waitlist form */}
-          <div className="animate-fade-in-up delay-200" style={{ opacity: 0 }}>
+          <div style={{ animation: 'fadeIn 0.6s ease 0.95s both' }}>
             <WaitlistForm />
             <p style={{ fontFamily: INT, fontWeight: 400, fontSize: '12px', color: '#7a6fa0', marginTop: '10px' }}>
               Be the first to know when we launch. No spam, ever.
